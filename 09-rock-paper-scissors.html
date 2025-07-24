@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+ 
+    </head>
+        <body>
+          <p>
+            Rock Paper Scissors
+          </p>
+            <button onclick="playGame('Rock')">Rock</button>
+            <button onclick="playGame('Paper')">Paper</button>
+            <button onclick="playGame('Scissors')">Scissors</button>
+
+            <p class="js-result">Select your weapon above ^</p>
+             <br></br>
+            <p class="js-score">Wins: 0, Losses: 0, Ties: 0</p>
+            <button onclick="playGame('Reset')">Reset</button>
+		
+        <script>
+            let score = JSON.parse(localStorage.getItem('score')) || {
+                    wins: 0,
+                    losses: 0,
+                    ties: 0
+                };
+
+            updateScoreElement();
+            
+
+            function playGame(userChoice) {
+                const randomNumber = Math.random();
+                let compChoice = '';
+
+                if (userChoice === 'Reset') {
+                    score.wins = 0;
+                    score.losses = 0;
+                    score.ties = 0;
+                    localStorage.removeItem('score');
+                    updateScoreElement();
+                    alert("Score has been reset!");
+                    return;
+                }
+
+                if (randomNumber < 1/3) {
+                compChoice = 'Rock';
+                } else if (randomNumber < 2/3) {
+                compChoice = 'Paper';
+                } else {
+                compChoice = 'Scissors';
+                }
+
+                let result = '';
+
+                if (userChoice === compChoice) {
+                result = "It is a tie!";
+                } else if (
+                (userChoice === 'Rock' && compChoice === 'Scissors') ||
+                (userChoice === 'Paper' && compChoice === 'Rock') ||
+                (userChoice === 'Scissors' && compChoice === 'Paper')
+                ) {
+                result = "You win!";
+                } else {
+                result = "You lose!";
+                }
+
+                // Update score
+                if (result === "You win!") {
+                    score.wins++;
+                } else if (result === "You lose!") {
+                    score.losses++;
+                } else {
+                    score.ties++;
+                }
+                console.log(`Computer chose: ${compChoice}, You chose: ${userChoice}, ${result}`);
+
+                displayResult(userChoice, compChoice, result);
+                localStorage.setItem('score', JSON.stringify(score));
+                updateScoreElement();
+            }
+
+            function updateScoreElement() {
+                document.querySelector('.js-score')
+                    .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+            }
+
+            function displayResult(userChoice, compChoice, result) {
+                document.querySelector('.js-result')
+                    .innerHTML = `You chose: ${userChoice} \n Computer chose: ${compChoice} \n Result: ${result}`
+            }
+            </script>
+
+
+        </body>
+</html>

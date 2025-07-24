@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+ 
+    </head>
+        <body>
+          <p>
+            Rock Paper Scissors
+          </p>
+			<script>
+            function playGame(userChoice) {
+                const randomNumber = Math.random();
+                let compChoice = '';
+
+                if (randomNumber < 1/3) {
+                compChoice = 'Rock';
+                } else if (randomNumber < 2/3) {
+                compChoice = 'Paper';
+                } else {
+                compChoice = 'Scissors';
+                }
+
+                let result = '';
+                if (userChoice === compChoice) {
+                result = "It is a tie!";
+                } else if (
+                (userChoice === 'Rock' && compChoice === 'Scissors') ||
+                (userChoice === 'Paper' && compChoice === 'Rock') ||
+                (userChoice === 'Scissors' && compChoice === 'Paper')
+                ) {
+                result = "You win!";
+                } else {
+                result = "You lose!";
+                }
+
+                console.log(`Computer chose: ${compChoice}\nYou chose: ${userChoice}\n${result}`);
+            }
+            </script>
+
+<button onclick="playGame('Rock')">Rock</button>
+<button onclick="playGame('Paper')">Paper</button>
+<button onclick="playGame('Scissors')">Scissors</button>
+        </body>
+</html>
