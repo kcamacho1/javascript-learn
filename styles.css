@@ -1,6 +1,16 @@
 body {
-    background-color: black-grey; /* Changed to a custom color */
-    color: white;
+    background-color: blanchedalmond; /* Changed to a custom color */
+    color: green;
     font-family: Arial, sans-serif;
     text-align: center;
+}
+
+section {
+    width: 80%; /* or use max-width: 600px; for fixed width */
+    max-width: 600px;
+    margin: 40px auto; /* top/bottom = 40px, left/right = auto to center */
+    padding: 20px;
+    border: 2px solid green;
+    border-radius: 10px;
+    background-color: white;
 }

@@ -24,6 +24,10 @@ A collection of web projects completed throughout the course: [Learn JavaScript 
 - Browser APIs: `DOM`, `localStorage`
 - No external libraries or frameworks
 
+
+---
+### Screenshots
+![alt text](image.png)
 ---
 
 ## 🚀 Getting Started
