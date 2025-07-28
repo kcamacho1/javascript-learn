@@ -14,7 +14,7 @@ A collection of web projects completed throughout the course: [Learn JavaScript 
   - Visual feedback for selected button
   - Reset functionality to clear score
 
-![alt text](image.png)
+![Rock Paper Scissors Screenshot](images/screenshots/rock-paper-scissors.png)
 
 ### **To-Do List App**
 - A simple task management tool using HTML, CSS, and JavaScript.
@@ -25,7 +25,7 @@ A collection of web projects completed throughout the course: [Learn JavaScript 
   - Remove button to delete individual tasks
   - Responsive and minimal design
 
-![To-Do List Screenshot](screenshots/todo-list-screenshot.png)
+![To-Do List Screenshot](images/screenshots/todo-list-screenshot.png)
 
 > _Add more projects here as you complete them (e.g., Calculator, Quiz App, To-Do List)_
 
