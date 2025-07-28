@@ -25,7 +25,7 @@ A collection of web projects completed throughout the course: [Learn JavaScript 
   - Remove button to delete individual tasks
   - Responsive and minimal design
 
-![To-Do List Screenshot](images/screenshots/to-do-list.png)
+![To-Do List Screenshot](images/screenshots/todo-list.png)
 
 > _Add more projects here as you complete them (e.g., Calculator, Quiz App, To-Do List)_
 
